@@ -23,9 +23,12 @@ class BooksApp extends Component {
    this.getBooks()
   }
 
-  newShelf = async (book, shelf)  =>{ 
-    await BooksAPI.update(book, shelf); 
-    this.getBooks()
+  newShelf =  (book, shelf)  =>{ 
+    book.shelf = shelf
+    BooksAPI.update(book, shelf); 
+    this.setState(state => ({
+    books: state.books.filter(b => b.id !== book.id).concat([ book ])
+  }))
     }
 
  

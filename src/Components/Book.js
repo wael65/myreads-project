@@ -9,7 +9,7 @@ const Book = ({ aBook, newShelf}) => {
                     <li>
                         <div className="book">
                             <div className="book-top">
-                              <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${aBook.imageLinks.smallThumbnail})`}}></div>
+                              <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: aBook.imageLinks ? `url(${aBook.imageLinks.smallThumbnail})`: "" }}></div>
                                 <div className="book-shelf-changer">
                                   <select onChange={handelChange} value={aBook.shelf ? aBook.shelf : "none"}>
                                      <option value="move" disabled>Move to...</option>
