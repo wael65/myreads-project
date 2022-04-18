@@ -1,16 +1,22 @@
-import React, {Component} from 'react';
+import React  from 'react';
 import { NavLink } from 'react-router-dom'; 
+import SearchBooks from './SearchBooks'
 
-
-class Search extends Component {  
-    render() {
+const Search = ({searchInput, allBooks, newShelf, searchShelf}) => {
           return (
-            <div>
-               <p>Search Page</p>
-               <NavLink exact to="/">Home</NavLink>
-            </div> 
+         <div className="search-books">
+            <div className="search-books-bar">
+               <NavLink className="close-search"  to="/"></NavLink>
+               <div className="search-books-input-wrapper">
+                 <input type="text" placeholder="Search by title or author"  onChange={searchInput}/>
+               </div>
+
+            </div>
+               <SearchBooks allBooks={allBooks} newShelf={newShelf} searchShelf={searchShelf}/>
+            </div>
+           
           );
        }
-    }
+    
     
     export default Search;

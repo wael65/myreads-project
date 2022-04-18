@@ -53,7 +53,7 @@ body, .app {
   bottom: 25px;
 }
 
-.open-search .plus {
+.open-search .add {
   display: block;
   width: 50px;
   height: 50px;
@@ -196,3 +196,4 @@ button:active {
   text-align: center;
   font-size: 0.8em;
 }
+
